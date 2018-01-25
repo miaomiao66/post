@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>@yield('title', '苗苗博客') - 苗苗博客</title>
+    <title>@yield('title', '首页') - 苗苗博客</title>
     <link rel="stylesheet" href="/css/app.css">
   </head>
   <body>
@@ -8,6 +8,7 @@
     
     <div class="container">
       <div class="col-md-offset-1 col-md-10">
+        @include('shared._messages')
         @yield('content')
         @include('layouts._footer')
       </div>
