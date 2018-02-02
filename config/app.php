@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://post.com'),
+    'url' => env('APP_URL', 'http://miaoqi.herokuapp.com/'),
 
     /*
     |--------------------------------------------------------------------------
