@@ -1,6 +1,10 @@
 <li>
   <img src="{{ $user->gravatar() }}" alt="{{ $user->name }}" class="gravatar"/>
-  <a href="{{ route('users.show', $user->id )}}" class="username">{{ $user->name }}</a>
+  @if (Auth::user()->id == $user->id)
+    <a href="{{ route('users.show', $user->id )}}" class="username">{{ $user->name }}</a> 
+  @else
+    <div class="username">{{ $user->name }}</div>      
+  @endif
 
   @can('destroy', $user)
       <form action="{{ route('users.destroy', $user->id) }}" method="post">

@@ -27,7 +27,8 @@ class UsersController extends Controller
     public function show(User $user)
     {
         $this->authorize('update', $user);
-        return view('users.show', compact('user'));
+        $statuses = $user->statuses()->orderby('created_at', 'desc')->paginate(30);
+        return view('users.show', compact('user', 'statuses'));
     }
 
     // 用户注册：保存用户信息
